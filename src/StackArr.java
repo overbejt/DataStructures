@@ -1,9 +1,34 @@
-
-public class StackArr <T> implements Stack<T> {
+/**
+ * Copyright (c) 2020 joverbeck8@gmail.com
+ * 
+ * @author Josh Overbeck
+ * 
+ * This is an implementation of the abstract stack class using an array.
+ *
+ * @param <T>
+ */
+public class StackArr < T > implements Stack < T > {
 
 	// Member variables
 	private int size;
+	private int length;
 	private T[] stack;
+	
+	// Default Constructor
+	public StackArr() {
+		this(DEFAULT_SIZE);
+	}  // End of the Default Constructor
+	
+	// Overloaded Constructor
+	@SuppressWarnings("unchecked")
+	public StackArr(int length) {
+		// Initialize the size of the stack to zero
+		this.size = 0;
+		// Initialize the length of the stack
+		this.length = length;
+		// Create an array with an 
+		this.stack = (T[]) new Object[length];
+	}  // End of the Overloaded Constructor
 	
 	/**
 	 * A method to push a variable onto the stack.
