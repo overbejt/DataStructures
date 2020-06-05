@@ -35,18 +35,24 @@ public class StackArrTestInt {
 
 	/**
 	 * This is the method that will test the default constructor.
+	 * @throws Exception 
 	 */
 	@Test
-	public void testStackArrConstructor() {
-		fail("Not yet implemented");
+	public void testStackArrConstructor() throws Exception {
+		setUp();
+		assertNotNull(stack);
+		tearDown();
 	}  // End of the 'testStackArrConstructor' method
 	
 	/**
 	 * This is the method that will test the overloaded constructor.
+	 * @throws Exception 
 	 */
 	@Test
-	public void testStackArrOverloadedConstructor() {
-		fail("Not yet implemented");
+	public void testStackArrOverloadedConstructor() throws Exception {
+		stack = new StackArr<Integer>(4);
+		assertNotNull(stack);
+		tearDown();
 	}  // End of the 'testStackArrOverloadedConstructor' method
 
 	/**
