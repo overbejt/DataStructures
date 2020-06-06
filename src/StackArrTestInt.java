@@ -49,35 +49,238 @@ public class StackArrTestInt {
 	 * @throws Exception 
 	 */
 	@Test
-	public void testStackArrOverloadedConstructor() throws Exception {
+	public void testStackArrOverloadedConstructor1() throws Exception {
 		stack = new StackArr<Integer>(4);
+		assertNotNull(stack);
+		tearDown();
+	}  // End of the 'testStackArrOverloadedConstructor' method
+	
+    /**
+	 * This is the method that will test the overloaded constructor.
+	 * @throws Exception 
+	 */
+	@Test
+	public void testStackArrOverloadedConstructor2() throws Exception {
+		stack = new StackArr<Integer>(5);
 		assertNotNull(stack);
 		tearDown();
 	}  // End of the 'testStackArrOverloadedConstructor' method
 
 	/**
-	 * REDUNDANT
-	 */
-	@Test
-	public void testStackArrInt() {
-		fail("Not yet implemented");
-	}  // End of the 'testStackArrInt' method
-
-	/**
 	 * This is the method that will test the push method.
 	 */
 	@Test
-	public void testPush() {
-		fail("Not yet implemented");
-	}  // End of the 'testPush' method
+	public void testPush1() {
+        setUp();
+        stack.push(1);
+        assertEquals(1, stack.peek());
+        tearDown();
+	}  // End of the 'testPush1' method
+	
+    /**
+	 * This is the method that will test the push method.
+	 */
+	@Test
+	public void testPush2() {
+        setUp();
+        stack.push(-4);
+        assertEquals(-4, stack.peek());
+        tearDown();
+	}  // End of the 'testPush2' method
+	
+    /**
+	 * This is the method that will test the push method.
+	 */
+	@Test
+	public void testPush3() {
+        setUp();
+        stack.push(Integer.MAX_VALUE);
+        assertEquals(Integer.MAX_VALUE, stack.peek();
+        tearDown();
+	}  // End of the 'testPush3' method
+	
+    /**
+	 * This is the method that will test the push method.
+	 */
+	@Test
+	public void testPush4() {
+        setUp();
+        stack.push(Integer.MIN_VALUE);
+        assertEquals(Integer.MIN_VALUE, stack.peek());
+        tearDown();
+	}  // End of the 'testPush4' method
+	
+    /**
+	 * This is the method that will test the push method.
+	 */
+	@Test
+	public void testPush5() {
+        setUp();
+        try {
+            stack.push(Integer.MAX_VALUE + 1);
+            fail("Expected an Integer overflow exception");
+        } catch (Exception e) {
+            pass("Was not intented to support larger than Integer");
+        }
+        tearDown();
+	}  // End of the 'testPush5' method
+    
+    /**
+	 * This is the method that will test the push method.
+	 */
+	@Test
+	public void testPush6() {
+        setUp();
+        try {
+            stack.push(Integer.MIN__VALUE - 1);
+            fail("Expected an Integer overflow exception");
+        } catch (Exception e) {
+            pass("Was not intented to support larger than Integer");
+        }
+        tearDown();
+	}  // End of the 'testPush6' method
+    
+    /**
+	 * This is the method that will test the push method.
+	 */
+	@Test
+	public void testPush7() {
+        setUp();
+        int expected = 19;
+        for (int i = 0; i < expected; i++) {
+            stack.push(i);
+        } 
+        assertEquals(expected, stack.size());`
+        tearDown();
+	}  // End of the 'testPush7' method
+    
+    /**
+	 * This is the method that will test the push method.
+	 */
+	@Test
+	public void testPush8() {
+        setUp();
+        int expected = 20;
+        for (int i = 0; i < expected; i++) {
+            stack.push(i);
+        } 
+        assertEquals(expected, stack.size();
+        tearDown();
+	}  // End of the 'testPush8' method
+    
+    /**
+	 * This is the method that will test the push method.
+	 */
+	@Test
+	public void testPush9() {
+        setUp();
+        int expected = 21;
+        for (int i = 0; i < expected; i++) {
+            stack.push(i);
+        } 
+        assertEquals(expected, stack.size());
+        tearDown();
+	}  // End of the 'testPush9' method
+    
+    /**
+	 * This is the method that will test the push method.
+	 */
+	@Test
+	public void testPush9() {
+        setUp();
+        int expected = 22;
+        for (int i = 0; i < expected; i++) {
+            stack.push(i);
+        } 
+        assertEquals(expected, stack.size());
+        tearDown();
+	}  // End of the 'testPush9' method
+    
+    /**
+	 * This is the method that will test the push method.
+	 */
+	@Test
+	public void testPush10() {
+        setUp();
+        int expected = 30;
+        for (int i = 0; i < expected; i++) {
+            stack.push(i);
+        } 
+        assertEquals(expected, stack.size());
+        tearDown();
+	}  // End of the 'testPush10' method
+    
+    /**
+	 * This is the method that will test the push method.
+	 */
+	@Test
+	public void testPush11() {
+        setUp();
+        int expected = 39;
+        for (int i = 0; i < expected; i++) {
+            stack.push(i);
+        } 
+        assertEquals(expected, stack.size());
+        tearDown();
+	}  // End of the 'testPush11' method
+    
+    /**
+	 * This is the method that will test the push method.
+	 */
+	@Test
+	public void testPush13() {
+        setUp();
+        int expected = 40;
+        for (int i = 0; i < expected; i++) {
+            stack.push(i);
+        } 
+        assertEquals(expected, stack.size());
+        tearDown();
+	}  // End of the 'testPush13' method
+    
+    /**
+	 * This is the method that will test the push method.
+	 */
+	@Test
+	public void testPush14() {
+        setUp();
+        int expected = 41;
+        for (int i = 0; i < expected; i++) {
+            stack.push(i);
+        } 
+        assertEquals(expected, stack.size());
+        tearDown();
+	}  // End of the 'testPush14' method
+    
+    /**
+	 * This is the method that will test the push method.
+	 */
+	@Test
+	public void testPush15() {
+        setUp();
+        int expected = 42
+        for (int i = 0; i < expected; i++) {
+            stack.push(i);
+        } 
+        assertEquals(expected, stack.size());
+        tearDown();
+	}  // End of the 'testPush15' method
 
 	/**
 	 * This is the method that will test the pop method.
 	 */
 	@Test
-	public void testPop() {
-		fail("Not yet implemented");
-	}  // End of the 'testPop' method
+	public void testPop1() {
+        setUp();
+        // Decalre final value;
+        int lastVal = 5;
+        for (int i = 0; i < lastVal; i++) {
+            stack.push(i);
+        }
+        int result = stack.pop();
+        assertEquals(lastVal, result);
+        tearDown();
+	}  // End of the 'testPop1' method
 
 	/**
 	 * This is the method that will test the isEmpty method.
