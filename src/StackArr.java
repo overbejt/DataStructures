@@ -38,7 +38,25 @@ public class StackArr < T > implements Stack < T > {
 	@Override
 	public void push(T t) {
 		// TODO Need to account for integer overflow.  Although, the compiler should catch it.
-		
+		// Check if need to increase length
+		if ((size + 1) > length) {
+			// Increase the length
+			int newLength = size + DEFAULT_SIZE;
+			// Copy values over to new array
+			T [] newArr = (T[]) new Object[newLength];
+			for (int i = 0; i < size; i++) {
+				newArr[i] = stack[i];
+			}
+			// Point stack to the new array
+			stack = newArr;
+			length = newLength;
+			// Recursively call to push the value into new array
+			push(t);
+		} else {
+		// Otherwise, push onto stack
+			stack[size] = t;
+			size++;
+		}
 	}  // End of the 'push' method
 
 	/**
@@ -48,8 +66,14 @@ public class StackArr < T > implements Stack < T > {
 	 */
 	@Override
 	public T pop() throws IndexOutOfBoundsException {
-		// TODO Fill in and remember to account for empty stack
-		return null;
+		// Escape early for empty stack
+		if (size == 0) {
+			throw new IndexOutOfBoundsException();
+		}
+		T result = stack[size - 1];
+		stack[size - 1] = null;
+		size--;
+		return result;
 	}  // End of the 'pop' method
 
 	/**
@@ -63,12 +87,16 @@ public class StackArr < T > implements Stack < T > {
 
 	/**
 	 * A method that will let you peek at the top element in the stack.
+	 * @throws IndexOutOfBoundsException
 	 * @return The item that is at the top of the stack.
 	 */
 	@Override
-	public T peek() {
-		// TODO Circular array? Or shuffle each time?
-		return null;
+	public T peek() throws IndexOutOfBoundsException {
+		// Escape early if empty
+		if (isEmpty()) {
+			throw new IndexOutOfBoundsException();
+		}
+		return stack[size - 1];
 	}  // End of the 'peek' method
 
 	/**

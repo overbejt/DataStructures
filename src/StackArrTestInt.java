@@ -73,9 +73,10 @@ public class StackArrTestInt {
 	@Test
 	public void testPush1() throws Exception {
         setUp();
-        stack.push(1);
+        int expected = 1;
+        stack.push(expected);
         int result = stack.peek();
-        assertEquals(1, result);
+        assertEquals(expected, result);
         tearDown();
 	}  // End of the 'testPush1' method
 	
@@ -126,11 +127,7 @@ public class StackArrTestInt {
 	@Test(expected=IllegalArgumentException.class)
 	public void testPush5() throws Exception {
         setUp();
-        try {
-            stack.push(Integer.MAX_VALUE + 1);
-            fail("Expected an Integer overflow exception");
-        } catch (Exception e) {
-        }
+        stack.push(Integer.MAX_VALUE + 1);
         tearDown();
 	}  // End of the 'testPush5' method
     
@@ -141,11 +138,7 @@ public class StackArrTestInt {
 	@Test (expected=IllegalArgumentException.class)
 	public void testPush6() throws Exception {
         setUp();
-        try {
-            stack.push(Integer.MIN_VALUE - 1);
-            fail("Expected an Integer overflow exception");
-        } catch (Exception e) {
-        }
+        stack.push(Integer.MIN_VALUE - 1);       
         tearDown();
 	}  // End of the 'testPush6' method
     
@@ -534,12 +527,7 @@ public class StackArrTestInt {
 	@Test (expected=IndexOutOfBoundsException.class)
 	public void testPop9() throws Exception {
         setUp();
-        try {
-            stack.pop();
-            fail("It should not allow pop when empty");
-        } catch (Exception e) {
-
-        }
+        stack.pop();
         tearDown();
 	}  // End of the 'testPop9' method
 
@@ -581,22 +569,350 @@ public class StackArrTestInt {
         assertEquals(true, result);
         tearDown();
 	}  // End of the 'testIsEmpty3' method
+	
+	/**
+	 * This is the method that will test the isEmpty method.
+     * @throws Exception 
+	 */
+	@Test
+	public void testIsEmpty4() throws Exception {
+        setUp();
+        int max = 5;
+        for (int i = 0; i < max; i++) {
+        	stack.push(i);
+        	boolean result = stack.isEmpty();
+        	assertEquals(false, result);
+        }
+        System.out.println("First");
+        for (int i = max ; i > 0; i--) {
+        	boolean result = stack.isEmpty();
+        	assertEquals(false, result);
+        	int scrap = stack.pop();
+        }
+//        int scrap = stack.pop();
+//        boolean result = stack.isEmpty();
+//        assertEquals(true, result);
+//        System.out.println("Second");
+        tearDown();
+	}  // End of the 'testIsEmpty4' method
 
 	/**
 	 * This is the method that will test the peek method.
+	 * @throws Exception 
 	 */
 	@Test
-	public void testPeek() {
-		fail("Not yet implemented");
-	}  // End of the 'testPeek' method
+	public void testPeek1() throws Exception {
+		setUp();
+		int expected = 4;
+		stack.push(expected);
+		int result = stack.peek();
+		assertEquals(expected, result);
+		tearDown();
+	}  // End of the 'testPeek1' method
+	
+	/**
+	 * This is the method that will test the peek method.
+	 * @throws Exception 
+	 */
+	@Test (expected = IndexOutOfBoundsException.class)
+	public void testPeek2() throws Exception {
+		setUp();
+		int scrap = stack.peek();
+		tearDown();
+	}  // End of the 'testPeek2' method
+	
+	/**
+	 * This is the method that will test the peek method.
+	 * @throws Exception 
+	 */
+	@Test
+	public void testPeek3() throws Exception {
+		setUp();
+		int max = 5;
+		for (int i = 0; i < max; i++) {
+			int expected = i;
+			stack.push(i);
+			int result = stack.peek();
+			assertEquals(expected, result);
+		}
+		tearDown();
+	}  // End of the 'testPeek3' method
+	
+	/**
+	 * This is the method that will test the peek method.
+	 * @throws Exception 
+	 */
+	@Test
+	public void testPeek4() throws Exception {
+		setUp();
+		int max = 19;
+		for (int i = 0; i < max; i++) {
+			int expected = i;
+			stack.push(i);
+			int result = stack.peek();
+			assertEquals(expected, result);
+		}
+		tearDown();
+	}  // End of the 'testPeek4' method
+	
+	/**
+	 * This is the method that will test the peek method.
+	 * @throws Exception 
+	 */
+	@Test
+	public void testPeek5() throws Exception {
+		setUp();
+		int max = 20;
+		for (int i = 0; i < max; i++) {
+			int expected = i;
+			stack.push(i);
+			int result = stack.peek();
+			assertEquals(expected, result);
+		}
+		tearDown();
+	}  // End of the 'testPeek5' method
+	
+	/**
+	 * This is the method that will test the peek method.
+	 * @throws Exception 
+	 */
+	@Test
+	public void testPeek6() throws Exception {
+		setUp();
+		int max = 21;
+		for (int i = 0; i < max; i++) {
+			int expected = i;
+			stack.push(i);
+			int result = stack.peek();
+			assertEquals(expected, result);
+		}
+		tearDown();
+	}  // End of the 'testPeek6' method
+	
+	/**
+	 * This is the method that will test the peek method.
+	 * @throws Exception 
+	 */
+	@Test
+	public void testPeek7() throws Exception {
+		setUp();
+		int max = 39;
+		for (int i = 0; i < max; i++) {
+			int expected = i;
+			stack.push(i);
+			int result = stack.peek();
+			assertEquals(expected, result);
+		}
+		tearDown();
+	}  // End of the 'testPeek7' method
+	
+	/**
+	 * This is the method that will test the peek method.
+	 * @throws Exception 
+	 */
+	@Test
+	public void testPeek8() throws Exception {
+		setUp();
+		int max = 40;
+		for (int i = 0; i < max; i++) {
+			int expected = i;
+			stack.push(i);
+			int result = stack.peek();
+			assertEquals(expected, result);
+		}
+		tearDown();
+	}  // End of the 'testPeek8' method
+	
+	/**
+	 * This is the method that will test the peek method.
+	 * @throws Exception 
+	 */
+	@Test
+	public void testPeek9() throws Exception {
+		setUp();
+		int max = 41;
+		for (int i = 0; i < max; i++) {
+			int expected = i;
+			stack.push(i);
+			int result = stack.peek();
+			assertEquals(expected, result);
+		}
+		tearDown();
+	}  // End of the 'testPeek9' method
 
 	/**
 	 * This is the method that will test the size method.
+	 * @throws Exception 
 	 */
 	@Test
-	public void testSize() {
-		fail("Not yet implemented");
-	}  // End of the 'testSize' method
+	public void testSize1() throws Exception {
+		setUp();
+		int expected = 0;
+		int result = stack.size();
+		assertEquals(expected, result);
+		tearDown();
+	}  // End of the 'testSize1' method
+	
+	/**
+	 * This is the method that will test the size method.
+	 * @throws Exception 
+	 */
+	@Test
+	public void testSize2() throws Exception {
+		setUp();
+		int max = 5;
+		for (int i = 1; i <= max; i++) {
+			int expected = i;
+			stack.push(i);
+			int result = stack.size();
+			assertEquals(expected, result);
+		}
+		tearDown();
+	}  // End of the 'testSize2' method
+	
+	/**
+	 * This is the method that will test the size method.
+	 * @throws Exception 
+	 */
+	@Test
+	public void testSize3() throws Exception {
+		setUp();
+		int max = 19;
+		for (int i = 1; i <= max; i++) {
+			int expected = i;
+			stack.push(i);
+			int result = stack.size();
+			assertEquals(expected, result);
+		}
+		tearDown();
+	}  // End of the 'testSize3' method
+	
+	/**
+	 * This is the method that will test the size method.
+	 * @throws Exception 
+	 */
+	@Test
+	public void testSize4() throws Exception {
+		setUp();
+		int max = 20;
+		for (int i = 1; i <= max; i++) {
+			int expected = i;
+			stack.push(i);
+			int result = stack.size();
+			assertEquals(expected, result);
+		}
+		tearDown();
+	}  // End of the 'testSize4' method
+	
+	/**
+	 * This is the method that will test the size method.
+	 * @throws Exception 
+	 */
+	@Test
+	public void testSize5() throws Exception {
+		setUp();
+		int max = 20;
+		for (int i = 1; i <= max; i++) {
+			int expected = i;
+			stack.push(i);
+			int result = stack.size();
+			assertEquals(expected, result);
+		}
+		tearDown();
+	}  // End of the 'testSize5' method
+	
+	/**
+	 * This is the method that will test the size method.
+	 * @throws Exception 
+	 */
+	@Test
+	public void testSize6() throws Exception {
+		setUp();
+		int max = 21;
+		for (int i = 1; i <= max; i++) {
+			int expected = i;
+			stack.push(i);
+			int result = stack.size();
+			assertEquals(expected, result);
+		}
+		tearDown();
+	}  // End of the 'testSize6' method
+	
+	/**
+	 * This is the method that will test the size method.
+	 * @throws Exception 
+	 */
+	@Test
+	public void testSize7() throws Exception {
+		setUp();
+		int max = 39;
+		for (int i = 1; i <= max; i++) {
+			int expected = i;
+			stack.push(i);
+			int result = stack.size();
+			assertEquals(expected, result);
+		}
+		tearDown();
+	}  // End of the 'testSize7' method
+	
+	/**
+	 * This is the method that will test the size method.
+	 * @throws Exception 
+	 */
+	@Test
+	public void testSize8() throws Exception {
+		setUp();
+		int max = 40;
+		for (int i = 1; i <= max; i++) {
+			int expected = i;
+			stack.push(i);
+			int result = stack.size();
+			assertEquals(expected, result);
+		}
+		tearDown();
+	}  // End of the 'testSize8' method
+	
+	/**
+	 * This is the method that will test the size method.
+	 * @throws Exception 
+	 */
+	@Test
+	public void testSize9() throws Exception {
+		setUp();
+		int max = 41;
+		for (int i = 1; i <= max; i++) {
+			int expected = i;
+			stack.push(i);
+			int result = stack.size();
+			assertEquals(expected, result);
+		}
+		tearDown();
+	}  // End of the 'testSize9' method
+	
+	/**
+	 * This is the method that will test the size method.
+	 * @throws Exception 
+	 */
+	@Test
+	public void testSize10() throws Exception {
+		setUp();
+		int max = 41;
+		for (int i = 1; i <= max; i++) {
+			int expected = i;
+			stack.push(i);
+			int result = stack.size();
+			assertEquals(expected, result);
+		}
+//		System.out.println("First done");
+		for (int i = max; i > 0; i--) {
+			int expected = i;
+			int result = stack.size();
+			assertEquals(expected, result);
+			int scrap = stack.pop();	
+		}
+//		System.out.println("Second Done");
+		tearDown();
+	}  // End of the 'testSize10' method
 
 }  // End of the 'StackArrTestInt' class
 
