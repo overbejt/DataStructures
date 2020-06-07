@@ -14,15 +14,17 @@ public interface Stack < T > {
 	
 	/**
 	 * A method to push a variable onto the stack.
+	 * @param IllegalArgumentException
 	 * @param t
 	 */
-	void push(T t);
+	void push(T t) throws IllegalArgumentException;
 	
 	/**
 	 * A method that will pop off the first item at the top of the stack.
+	 * @throws IndexOutOfBoundsException
 	 * @return The item at the top of the stack.
 	 */
-	T pop();
+	T pop() throws IndexOutOfBoundsException;
 	
 	/**
 	 * A method that will check to see if the stack is empty.
@@ -32,9 +34,10 @@ public interface Stack < T > {
 	
 	/**
 	 * A method that will let you peek at the top element in the stack.
+	 * @throws IndexOutOfBoundsException
 	 * @return The item that is at the top of the stack.
 	 */
-	T peek();
+	T peek() throws IndexOutOfBoundsException;
 	
 	/**
 	 * A method that will let you get the size of the stack.

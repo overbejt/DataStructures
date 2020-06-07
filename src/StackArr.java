@@ -24,6 +24,7 @@ public class StackArr < T > implements Stack < T > {
 	public StackArr(int length) {
 		// Initialize the size of the stack to zero
 		this.size = 0;
+		// TODO:  Need to make sure it accounts for integer overflow!
 		// Initialize the length of the stack
 		this.length = length;
 		// Create an array with an 
@@ -36,17 +37,18 @@ public class StackArr < T > implements Stack < T > {
 	 */
 	@Override
 	public void push(T t) {
-		// TODO Auto-generated method stub
+		// TODO Need to account for integer overflow.  Although, the compiler should catch it.
 		
 	}  // End of the 'push' method
 
 	/**
 	 * A method that will pop off the first item at the top of the stack.
+	 * @throws IndexOutOfBoundsException
 	 * @return The item at the top of the stack.
 	 */
 	@Override
-	public T pop() {
-		// TODO Auto-generated method stub
+	public T pop() throws IndexOutOfBoundsException {
+		// TODO Fill in and remember to account for empty stack
 		return null;
 	}  // End of the 'pop' method
 
@@ -56,8 +58,7 @@ public class StackArr < T > implements Stack < T > {
 	 */
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
+		return (size == 0);
 	}  // End of the 'isEmpty' method
 
 	/**
@@ -66,7 +67,7 @@ public class StackArr < T > implements Stack < T > {
 	 */
 	@Override
 	public T peek() {
-		// TODO Auto-generated method stub
+		// TODO Circular array? Or shuffle each time?
 		return null;
 	}  // End of the 'peek' method
 
@@ -76,8 +77,7 @@ public class StackArr < T > implements Stack < T > {
 	 */
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
+		return size;
 	}  // End of the 'size' method
 
 }  // End of the 'StackArr' class
